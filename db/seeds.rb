@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require "faker"
+
+100.times do
+    patient_status = %w[Inquiry Onboarding Active Churned].sample
+    Patient.create(
+        first_name: Faker::Name.first_name,
+        middle_name: Faker::Name.middle_name,
+        last_name: Faker::Name.last_name,
+        address: Faker::Address.street_address,
+        city: Faker::Address.city,
+        state: Faker::Address.state_abbr,
+        zip_code: Faker::Address.zip_code[0,5],
+        date_of_birth: Faker::Date.between(from: "1950-01-01", to: "2005-01-01"),
+        status: patient_status
+    )
+end
