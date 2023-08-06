@@ -74,3 +74,5 @@ end
 gem "faker", "~> 3.2"
 
 gem "bootstrap", "~> 5.2"
+
+gem "jquery-datatables", "~> 1.10"
