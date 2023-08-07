@@ -72,3 +72,11 @@ group :test do
 end
 
 gem "faker", "~> 3.2"
+
+gem "bootstrap", "~> 5.2"
+
+gem "jquery-datatables", "~> 1.10"
+
+gem 'jquery-rails'
+
+gem "webpacker"
