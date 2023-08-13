@@ -1,2 +1,11 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<h1>Patient: <%= @patient.first_name + " " + @patient.middle_name + " " + @patient.last_name %></h1>
+Date of birth: <%= @patient.date_of_birth.strftime("%m/%d/%Y") %><br>
+Status: <%= @patient.status %><br>
+Address: <%= @patient.address %><br>
+City: <%= @patient.city %><br>
+State: <%= @patient.state %><br>
+Zip Code: <%= @patient.zip_code %><br>
+<% fields = @patient.fields %>
+<% fields.each do |field| %>
+    <%= field.field_type.title %>: <%= field.content %><br>
+<% end %>
