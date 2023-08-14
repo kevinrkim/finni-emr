@@ -9,3 +9,5 @@ Zip Code: <%= @patient.zip_code %><br>
 <% fields.each do |field| %>
     <%= field.field_type.title %>: <%= field.content %><br>
 <% end %>
+
+<%= link_to "Edit patient", edit_patient_path(@patient) %>
