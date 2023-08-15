@@ -9,3 +9,16 @@
 //= require datatables
 //= require_tree .
 
+$("tr[data-link]").click(function() {
+    window.location = $(this).data("link")
+})
+
+$("tr[data-link]").hover(function() {
+    $(this).css('cursor', 'pointer');
+})
+
+$(function() {
+    $('#patients-datatable').DataTable().destroy();
+    var oTable = $("#patients-datatable").dataTable({});
+});
+
