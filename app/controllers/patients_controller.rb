@@ -1,4 +1,15 @@
 class PatientsController < ApplicationController
+  
+  def new
+    @patient = Patient.new
+  end
+
+  def create
+      @patient = Patient.new(params.require(:patient).permit(:first_name, :middle_name, :last_name, :date_of_birth, :status, :address, :city, :state, :zip_code))
+      @patient.save
+      redirect_to patient_path(@patient)
+  end
+  
   def index
     @patients = Patient.all
   end
@@ -13,7 +24,7 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-    if @patient.update(params.require(:patient).permit(:first_name, :middle_name, :last_name, :status, :address, :city, :state, :zip_code))
+    if @patient.update(params.require(:patient).permit(:first_name, :middle_name, :last_name, :date_of_birth, :status, :address, :city, :state, :zip_code))
       flash[:success] = "Patient updated!"
       redirect_to patient_path(@patient)
     else

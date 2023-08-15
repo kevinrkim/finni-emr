@@ -10,7 +10,7 @@ Zip Code: <%= @patient.zip_code %><br>
     <%= field.field_type.title %>: <%= field.content %><br>
 <% end %>
 
-<%= link_to "Edit patient", edit_patient_path(@patient) %><br>
+<%= link_to "Edit patient", edit_patient_path(@patient), class:"btn btn-secondary" %><br>
 <%= button_to "Delete patient",
               patient_path(@patient.id),
               method: :delete,
