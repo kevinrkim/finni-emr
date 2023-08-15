@@ -11,4 +11,8 @@ Zip Code: <%= @patient.zip_code %><br>
 <% end %>
 
 <%= link_to "Edit patient", edit_patient_path(@patient) %><br>
-<%= link_to "Delete patient", @patient, class: "btn btn-danger", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this patient?" } %>
+<%= button_to "Delete patient",
+              patient_path(@patient.id),
+              method: :delete,
+              form: { data: { turbo_confirm: "Are you sure?" } },
+              class: "btn btn-danger" %>
