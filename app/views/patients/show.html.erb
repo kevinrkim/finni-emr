@@ -10,4 +10,5 @@ Zip Code: <%= @patient.zip_code %><br>
     <%= field.field_type.title %>: <%= field.content %><br>
 <% end %>
 
-<%= link_to "Edit patient", edit_patient_path(@patient) %>
+<%= link_to "Edit patient", edit_patient_path(@patient) %><br>
+<%= link_to "Delete patient", @patient, class: "btn btn-danger", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this patient?" } %>
